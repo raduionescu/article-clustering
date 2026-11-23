@@ -58,12 +58,6 @@ tfidf_vectorizer = TfidfVectorizer(stop_words='english')
 tfidf = tfidf_vectorizer.fit_transform(df['text'])
 ```
 
-In the current script, the BERT vectors are computed first and then replaced by the TF-IDF vectors before clustering. Therefore, the default final clustering output uses **TF-IDF**. To cluster the BERT representations instead, remove or comment out this line:
-
-```python
-feature_vectors, IDs = extract_tfidf(df)
-```
-
 ## Clustering
 
 The script performs agglomerative hierarchical clustering with Ward linkage and Euclidean distance:
